@@ -62,8 +62,8 @@ public class Game {
             System.out.print("Введите букву: ");
             String guess = sc.nextLine().toLowerCase();
             if (guess.length() != 1) {
-                System.out.println("Пожалуйста, введите одну букву");
-            } else if (!"абвгдеёжзиклмнопрстуфхцчшщьыъэюя".contains(guess)) { //guess -> char  guess>'а' and guess<'я'
+                System.out.println("Пожалуйста, введите одну букву ");
+            } else if (!"абвгдеёжзийклмнопрстуфхцчшщьыъэюя".contains(guess)) { //guess -> char  guess>'а' and guess<'я'
                 System.out.println("Пожалуйста, введите БУКВУ!");
             } else if (alreadyGuessed.contains(guess)) {
                 System.out.println("Вы уже указывали эту букву, введите другую:");
@@ -76,7 +76,7 @@ public class Game {
     private void displayBoard() throws FileNotFoundException {
         String hangmanPicture = hangmanPictures[missedLetters.length()];
         readFileData(hangmanPicture);
-        System.out.println("Ошибочные буквы:");
+        System.out.println("Ошибочные буквы: ");
         for (int i = 0; i < missedLetters.length(); i++) {
             System.out.print(missedLetters.charAt(i) + " ");
         }
@@ -132,9 +132,9 @@ public class Game {
                 if (missedLetters.length() == (hangmanPictures.length - 1)) {
                     displayBoard();
                     System.out.println("Вы исчерпали все попытки!");
-                    System.out.println("Не угадали " + missedLetters.length() + "букв");
-                    System.out.println("Угадано букв:" + correctLetters.length());
-                    System.out.println("Загаданное слово:" + secretWord);
+                    System.out.println("Не угадали " + missedLetters.length() + " букв");
+                    System.out.println("Угадано букв: " + correctLetters.length());
+                    System.out.println("Загаданное слово: " + secretWord);
                     gameIsDone = true;
                 }
             }
