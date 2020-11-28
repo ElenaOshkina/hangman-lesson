@@ -1,9 +1,10 @@
 package ru.oshkina;
 
+import java.io.FileNotFoundException;
+
 public class Demo {
-    public static void main(String[] args) {
-        System.out.println("Hello");
-        System.out.println("Hello");
-        System.out.println("213");
+    public static void main(String[] args) throws FileNotFoundException {
+       Game game = new Game();
+       game.start();
     }
 }
